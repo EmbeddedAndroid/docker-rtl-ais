@@ -1,4 +1,4 @@
-FROM bitnami/minideb:jessie
+FROM linarotechnologies/minideb:stretch
 
 ENV VER=${VER:-master} \
     REPO=https://github.com/dgiardini/rtl-ais.git \
