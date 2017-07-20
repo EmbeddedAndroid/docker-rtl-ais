@@ -7,10 +7,10 @@ ENV VER=${VER:-master} \
 
 WORKDIR $APP
 
-RUN install_packages git wget rtl-sdr librtlsdr-dev gnuais gnuaisgui make build-essential pkg-config libusb-1.0-0-dev \
+RUN install_packages git wget rtl-sdr librtlsdr-dev gnuais gnuaisgui make build-essential pkg-config libusb-1.0-0-dev gnuradio gr-osmosdr \
 &&  git clone -b $VER $REPO $APP \
-&&  make 
+&&  make
 
-EXPOSE 10110
+EXPOSE 10110/udp
 
 CMD $APP/rtl_ais -n
